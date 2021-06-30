@@ -17,15 +17,8 @@ def ChangeSpectrum(spectrum):
 
 
 class SawtoothSignal(Sinusoid):
-    """Represents a sawtooth signal."""
 
     def evaluate(self, ts):
-        """Evaluates the signal at the given times.
-
-        ts: float array of times
-
-        returns: float wave array
-        """
         ts = np.asarray(ts)
         cycles = self.freq * ts + self.offset / PI2
         frac, _ = np.modf(cycles)
